@@ -1128,6 +1128,32 @@ if ( class_exists("Kirki")){
 
     Kirki::add_field( 'theme_config_id', [
 		'type'        => 'custom',
+		'settings'    => 'fitness_elementor_show_footer_widget_heading',
+		'section'     => 'fitness_elementor_footer_section',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Enable / Disable', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'settings'    => 'fitness_elementor_show_footer_widget',
+		'label'       => esc_html__( 'Footer Widget', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_footer_section',
+		'default'     => '1',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'settings'    => 'fitness_elementor_show_footer_copyright',
+		'label'       => esc_html__( 'Footer Copyright', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_footer_section',
+		'default'     => '1',
+		'priority'    => 10,
+	] );
+
+    Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
 		'settings'    => 'fitness_elementor_footer_text_heading',
 		'section'     => 'fitness_elementor_footer_section',
 			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Footer Copyright Text', 'fitness-elementor' ) . '</h3>',
