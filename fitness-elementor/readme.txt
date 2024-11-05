@@ -1,7 +1,7 @@
 === Fitness Elementor ===
 Contributors: wpelemento
 Requires at least: 5.0
-Stable tag: 0.2.9
+Stable tag: 0.3
 Requires PHP: 5.6
 Tested up to: 6.6
 License: GPLv3.0 or later
@@ -54,6 +54,12 @@ License URI : https://pxhere.com/en/license, CC0
 Source 		: https://pxhere.com/en/photo/1165965
 
 == Changelog ==
+
+= November-5-2024 :: 0.3
+
+* Added scroll to top position option.
+* Added scroll to top border radius option.
+* added address button css.
 
 = October-18-2024 :: 0.2.9
 

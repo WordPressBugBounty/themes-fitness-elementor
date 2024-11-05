@@ -557,6 +557,55 @@ if ( class_exists("Kirki")){
 
 	Kirki::add_field( 'theme_config_id', [
 		'type'        => 'custom',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_scroll_alignment_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Scroll To Top Position', 'fitness-elementor' ) . '</h3>',
+	] );
+
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'radio-buttonset',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_scroll_alignment',
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => 'right',
+		'choices'     => [
+			'left' => esc_html__( 'left', 'fitness-elementor' ),
+			'center' => esc_html__( 'center', 'fitness-elementor' ),
+			'right' => esc_html__( 'right', 'fitness-elementor' ),
+		]
+	) );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_scroller_border_radius_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Scroll To Top Border Radius', 'fitness-elementor' ) . '</h3>',
+	] );
+
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'slider',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_scroller_border_radius',
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => '3',
+		'choices'     => [
+			'min'  => 0,
+			'max'  => 25,
+			'step' => 1,
+		],
+		'output' => array(
+			array(
+				'element'  => '.scroll-up a',
+				'property' => 'border-radius',
+				'units' => 'px',
+			),
+		),
+	) );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
 		'settings'    => 'fitness_elementor_single_page_layout_heading',
 		'section'     => 'fitness_elementor_additional_setting',
 		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Single Page Layout', 'fitness-elementor' ) . '</h3>',
