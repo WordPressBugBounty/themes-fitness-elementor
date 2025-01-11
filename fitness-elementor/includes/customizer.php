@@ -606,6 +606,25 @@ if ( class_exists("Kirki")){
 
 	Kirki::add_field( 'theme_config_id', [
 		'type'        => 'custom',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_cursor_outline_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Dot Cursor', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_cursor_outline',
+		'label'       => esc_html__( 'Enable or Disable Dot Cursor', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => false,
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
 		'settings'    => 'fitness_elementor_single_page_layout_heading',
 		'section'     => 'fitness_elementor_additional_setting',
 		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Single Page Layout', 'fitness-elementor' ) . '</h3>',

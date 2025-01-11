@@ -1,7 +1,7 @@
 === Fitness Elementor ===
 Contributors: wpelemento
 Requires at least: 5.0
-Stable tag: 0.3.1
+Stable tag: 0.3.2
 Requires PHP: 5.6
 Tested up to: 6.7
 License: GPLv3.0 or later
@@ -17,7 +17,7 @@ Fitness Elementor WordPress Theme is designed especially for businesses like fit
 Google Web Fonts (Josefin) By Google - https://google.com
 * Josefin Font by Indian Type Foundry, Licensed under Open Font License, https://fonts.google.com/specimen/Josefin+Sans?query=jo
 
-Bootstrap  v5.3.3 (https://getbootstrap.com) 
+Bootstrap  v5.3.3 (https://getbootstrap.com)
 * Copyright 2011-2024 The Bootstrap Authors
 * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
 
@@ -54,6 +54,13 @@ License URI : https://pxhere.com/en/license, CC0
 Source 		: https://pxhere.com/en/photo/1165965
 
 == Changelog ==
+
+= January-9-2025 :: 0.3.2
+
+* Added dot cursor.
+* Resolved scroll to top css issue.
+* Added edit link in blog post and single post.
+* Added edit link in pages.
 
 = December-14-2024 :: 0.3.1
 

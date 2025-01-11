@@ -50,6 +50,9 @@
         <?php if( get_theme_mod( 'fitness_elementor_comment_hide',true)) : ?>
             <i class="<?php echo esc_attr(get_theme_mod('fitness_elementor_post_comment_icon_changer','fas fa-comments')); ?>"></i><span class="entry-comments ms-2"><?php comments_number( __('0 Comments','fitness-elementor'), __('0 Comments','fitness-elementor'), __('% Comments','fitness-elementor') ); ?></span>
         <?php endif; ?>
+        <div class="link-edit">
+          <?php edit_post_link( esc_html__( 'Edit', 'fitness-elementor' ), '<span class="edit-link">', '</span>' );  ?>
+        </div>
         </div>
       </div>
     </div>
@@ -90,6 +93,9 @@
         <?php if( get_theme_mod( 'fitness_elementor_comment_hide',true)) : ?>
             <i class="<?php echo esc_attr(get_theme_mod('fitness_elementor_post_comment_icon_changer','fas fa-comments')); ?>"></i><span class="entry-comments ms-2"><?php comments_number( __('0 Comments','fitness-elementor'), __('0 Comments','fitness-elementor'), __('% Comments','fitness-elementor') ); ?></span>
         <?php endif; ?>
+        <div class="link-edit">
+          <?php edit_post_link( esc_html__( 'Edit', 'fitness-elementor' ), '<span class="edit-link">', '</span>' );  ?>
+        </div>
         </div>
       </div>
     </div>

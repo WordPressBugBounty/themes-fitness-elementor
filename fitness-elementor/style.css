@@ -4,7 +4,7 @@ Description: Fitness Elementor WordPress Theme is designed especially for busine
 Author: wpelemento
 Theme URI: https://www.wpelemento.com/products/free-fitness-wordpress-theme
 Author URI: https://www.wpelemento.com/
-Version: 0.3.1
+Version: 0.3.2
 Requires PHP: 5.6
 Tested up to: 6.7
 Requires at least: 5.0
@@ -490,6 +490,27 @@ p.slider-button a:hover {
   color: var(--primary-theme-color);
   font-size: 12px;
 }
+  /* Edit link  */
+  .link-edit{
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .post-info{
+    display:inline-block;
+  }
+  .link-edit::before {
+      content: "\f044";
+      color: var(--primary-theme-color);
+  }
+  .link-edit::before {
+      display: inline-block;
+      font-family: 'Font Awesome 6 Free';
+      height: 15px;
+      margin-right: 8px;
+  }
+  .post-edit-link{
+    color: #000 !important;
+  }
 /* ===============================================
    Pagination
    ============================================= */
@@ -1339,6 +1360,9 @@ color: #ffffff;
   opacity: 1;
   transition: all 0.3s ease 0s;
   box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+}
+.scroll-up i{
+  line-height: 40px;
 }
 /* ===============================================
   Search pop up
