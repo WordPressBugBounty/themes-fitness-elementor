@@ -102,6 +102,9 @@
       <a href="#tobottom"><i class="fa fa-arrow-up"></i></a>
     </div>
   <?php endif; ?>
+  <?php if(get_theme_mod('fitness_elementor_progress_bar', false )== true): ?>
+    <div id="elemento-progress-bar" class="theme-progress-bar top"></div>
+  <?php endif; ?>
   <?php if(get_theme_mod('fitness_elementor_cursor_outline', false )== true): ?>
 			<!-- Custom cursor -->
 			<div class="cursor-point-outline"></div>

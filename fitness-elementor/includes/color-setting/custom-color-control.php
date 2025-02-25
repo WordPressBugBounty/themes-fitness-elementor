@@ -27,3 +27,13 @@
 			$fitness_elementor_theme_custom_setting_css .='right: auto;!important;';
         $fitness_elementor_theme_custom_setting_css .='}';
     }
+
+    // Related Product
+
+	$fitness_elementor_show_related_product = get_theme_mod('fitness_elementor_show_related_product', true );
+
+	if($fitness_elementor_show_related_product != true){
+		$fitness_elementor_theme_custom_setting_css .='.related.products{';
+			$fitness_elementor_theme_custom_setting_css .='display: none;';
+		$fitness_elementor_theme_custom_setting_css .='}';
+	}	

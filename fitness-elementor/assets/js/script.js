@@ -227,3 +227,26 @@ const fitness_elementor_customCursor = {
   },
 };
 fitness_elementor_customCursor.init(); 
+
+/* ===============================================
+  Progress Bar
+============================================= */
+const fitness_elementor_progressBar = {
+  init: function () {
+      let fitness_elementor_progressBarDiv = document.getElementById("elemento-progress-bar");
+
+      if (fitness_elementor_progressBarDiv) {
+          let fitness_elementor_body = document.body;
+          let fitness_elementor_rootElement = document.documentElement;
+
+          window.addEventListener("scroll", function (event) {
+              let fitness_elementor_winScroll = fitness_elementor_body.scrollTop || fitness_elementor_rootElement.scrollTop;
+              let fitness_elementor_height =
+              fitness_elementor_rootElement.scrollHeight - fitness_elementor_rootElement.clientHeight;
+              let fitness_elementor_scrolled = (fitness_elementor_winScroll / fitness_elementor_height) * 100;
+              fitness_elementor_progressBarDiv.style.width = fitness_elementor_scrolled + "%";
+          });
+      }
+  },
+};
+fitness_elementor_progressBar.init();

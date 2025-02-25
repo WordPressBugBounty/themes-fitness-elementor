@@ -625,6 +625,25 @@ if ( class_exists("Kirki")){
 
 	Kirki::add_field( 'theme_config_id', [
 		'type'        => 'custom',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_progress_bar_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Progress Bar', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_progress_bar',
+		'label'       => esc_html__( 'Enable or Disable Progress Bar', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => false,
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
 		'settings'    => 'fitness_elementor_single_page_layout_heading',
 		'section'     => 'fitness_elementor_additional_setting',
 		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Single Page Layout', 'fitness-elementor' ) . '</h3>',
@@ -853,6 +872,26 @@ if ( class_exists("Kirki")){
 						'step' => 1,
 				],
 	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'      => 'blog-post',
+		'settings'    => 'fitness_elementor_show_pagination_heading',
+		'section'     => 'fitness_elementor_blog_post',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Blog Post Pagination', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'tab'      => 'blog-post',
+		'settings'    => 'fitness_elementor_show_pagination',
+		'label'       => esc_html__( 'Enable or Disable Blog Post Pagination', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_blog_post',
+		'default'     => true,
+		'priority'    => 10,
+	] );
+
 
 	Kirki::add_field( 'theme_config_id', [
 		'type'        => 'toggle',
@@ -1108,6 +1147,23 @@ if ( class_exists("Kirki")){
 				'units' => 'px',
 			),
 		),
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'settings'    => 'fitness_elementor_show_related_product_heading',
+		'section'     => 'fitness_elementor_woocommerce_settings',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Related Product', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'settings'    => 'fitness_elementor_show_related_product',
+		'label'       => esc_html__( 'Enable or Disable Related Product', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_woocommerce_settings',
+		'default'     => true,
+		'priority'    => 10,
 	] );
 
 	// No Results Page Settings

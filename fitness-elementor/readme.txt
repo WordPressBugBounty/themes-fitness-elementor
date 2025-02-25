@@ -1,7 +1,7 @@
 === Fitness Elementor ===
 Contributors: wpelemento
 Requires at least: 5.0
-Stable tag: 0.3.2
+Stable tag: 0.3.3
 Requires PHP: 5.6
 Tested up to: 6.7
 License: GPLv3.0 or later
@@ -54,6 +54,12 @@ License URI : https://pxhere.com/en/license, CC0
 Source 		: https://pxhere.com/en/photo/1165965
 
 == Changelog ==
+
+= February-14-2025 :: 0.3.3
+
+* Added enable / disable related product option.
+* Added enable / disable blog post pagination option.
+* Added enable / disable progress bar.
 
 = January-9-2025 :: 0.3.2
 
