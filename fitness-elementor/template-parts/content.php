@@ -16,7 +16,7 @@
 ?>
 <?php if ((get_theme_mod( 'fitness_elementor_post_layout','Right Sidebar') == 'Three Columns') || (get_theme_mod( 'fitness_elementor_post_layout','Right Sidebar') == 'Four Columns')) : ?> 
   <div class="col-lg-12 col-md-12 col-sm-12">
-    <div id="post-<?php the_ID(); ?>" <?php post_class('post-box mb-4'); ?>>
+    <div id="post-<?php the_ID(); ?>" <?php post_class('post-box mb-4 ' . (get_theme_mod('fitness_elementor_enable_post_animation', true) ? 'zoomIn wow' : '')); ?>>
       <div class="box">
         <div class="post-thumbnail">
           <?php if (get_theme_mod( 'fitness_elementor_blog_post_featured_image',true)) : ?>      
@@ -59,7 +59,7 @@
   </div>
 <?php else: ?>
   <div class="col-lg-6 col-md-6 col-sm-6">
-    <div id="post-<?php the_ID(); ?>" <?php post_class('post-box mb-4'); ?>>
+    <div id="post-<?php the_ID(); ?>" <?php post_class('post-box mb-4 ' . (get_theme_mod('fitness_elementor_enable_post_animation', true) ? 'zoomIn wow' : '')); ?>>
       <div class="box">
         <div class="post-thumbnail">  
           <?php if (get_theme_mod( 'fitness_elementor_blog_post_featured_image',true)) : ?>      

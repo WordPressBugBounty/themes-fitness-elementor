@@ -15,13 +15,13 @@ function fitness_elementor_enqueue_google_fonts() {
 
 	wp_enqueue_style(
 		'Epilogue',
-		wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' ),
+		fitness_elementor_wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' ),
 		array(),
 		'1.0'
 	);
 	wp_enqueue_style(
 		'Raleway',
-		wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' ),
+		fitness_elementor_wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' ),
 		array(),
 		'1.0'
 	);
@@ -67,6 +67,10 @@ if (!function_exists('fitness_elementor_enqueue_scripts')) {
 			'1.0',
 			TRUE
 		);
+
+		wp_enqueue_style( 'animate-css', esc_url(get_template_directory_uri()).'/assets/css/animate.css' );
+
+		wp_enqueue_script( 'wow-js', esc_url(get_template_directory_uri()) . '/assets/js/wow.js', array('jquery') );
 
 		require get_parent_theme_file_path( '/includes/color-setting/custom-color-control.php' );
 		wp_add_inline_style( 'fitness-elementor-style',$fitness_elementor_theme_custom_setting_css );
@@ -171,21 +175,19 @@ if (!function_exists('fitness_elementor_after_setup_theme')) {
 function fitness_elementor_activation_notice() {
 	echo '<div class="notice notice-info wpele-activation-notice is-dismissible">';
 		echo '<div class="notice-body">';
-			echo '<div class="notice-icon">';
-				echo '<img src="'.esc_url(get_template_directory_uri()).'/includes/getstart/images/get-logo.png ">';
-			echo '</div>';
 			echo '<div class="notice-content">';
 				echo '<h2>'. esc_html__( 'Welcome to WPElemento', 'fitness-elementor' ) .'</h2>';
 				echo '<p>'. esc_html__( 'Thank you for choosing Fitness Elementor theme .To setup the theme, please visit the get started page.', 'fitness-elementor' ) .'</p>';
-				echo '<span><a href="'. esc_url( admin_url( 'themes.php?page=fitness_elementor_about' ) ) .'" class="button button-primary">'. esc_html__( 'GET STARTED', 'fitness-elementor' ) .'</a></span>';
+				echo '<span><a href="'. esc_url( admin_url( 'themes.php?page=fitness_elementor_about' ) ) .'" class="button button-notice">'. esc_html__( 'GET STARTED', 'fitness-elementor' ) .'</a></span>';
+				echo '<span><a href="'. esc_url( FITNESS_ELEMENTOR_BUY_NOW ) .'" class="button button-notice" target="_blank" >'. esc_html__( 'BUY NOW', 'fitness-elementor' ) .'</a></span>';
+				echo '<span><a href="'. esc_url( FITNESS_ELEMENTOR_LIVE_DEMO ) .'" class="button button-notice" target="_blank" >'. esc_html__( 'DEMO', 'fitness-elementor' ) .'</a></span>';
+			echo '</div>';
+			echo '<div class="notice-icon">';
+				echo '<img src="'.esc_url(get_template_directory_uri()).'/includes/getstart/images/get-logo.png ">';
 			echo '</div>';
 		echo '</div>';
 	echo '</div>';
 }
-
-require get_template_directory() .'/includes/tgm/tgm.php';
-require get_template_directory() . '/includes/customizer.php';
-load_template( trailingslashit( get_template_directory() ) . '/includes/go-pro/class-upgrade-pro.php' );
 
 /* Get post comments */
 
@@ -443,23 +445,30 @@ function fitness_elementor_customize_css() {
 
 add_action( 'wp_head', 'fitness_elementor_customize_css');
 
-define('FITNESS_ELEMENTOR_FREE_THEME_DOC',__('https://preview.wpelemento.com/theme-documentation/fitness-elementor/','fitness-elementor'));
-define('FITNESS_ELEMENTOR_SUPPORT',__('https://wordpress.org/support/theme/fitness-elementor/','fitness-elementor'));
-define('FITNESS_ELEMENTOR_REVIEW',__('https://wordpress.org/support/theme/fitness-elementor/reviews/','fitness-elementor'));
-define('FITNESS_ELEMENTOR_BUY_NOW',__('https://www.wpelemento.com/products/fitness-wordpress-theme','fitness-elementor'));
-define('FITNESS_ELEMENTOR_LIVE_DEMO',__('https://preview.wpelemento.com/fitness-elementor/','fitness-elementor'));
-define('FITNESS_ELEMENTOR_THEME_BUNDLE',__('https://www.wpelemento.com/products/wordpress-theme-bundle','fitness-elementor'));
+function fitness_elementor_enqueue_setting() {
+	define('FITNESS_ELEMENTOR_FREE_THEME_DOC',__('https://preview.wpelemento.com/theme-documentation/fitness-elementor/','fitness-elementor'));
+	define('FITNESS_ELEMENTOR_SUPPORT',__('https://wordpress.org/support/theme/fitness-elementor/','fitness-elementor'));
+	define('FITNESS_ELEMENTOR_REVIEW',__('https://wordpress.org/support/theme/fitness-elementor/reviews/','fitness-elementor'));
+	define('FITNESS_ELEMENTOR_BUY_NOW',__('https://www.wpelemento.com/products/fitness-wordpress-theme','fitness-elementor'));
+	define('FITNESS_ELEMENTOR_LIVE_DEMO',__('https://preview.wpelemento.com/fitness-elementor/','fitness-elementor'));
+	define('FITNESS_ELEMENTOR_THEME_BUNDLE',__('https://www.wpelemento.com/products/wordpress-theme-bundle','fitness-elementor'));
 
-/* Plugin Activation */
-require get_template_directory() . '/includes/getstart/plugin-activation.php';
+	require get_template_directory() .'/includes/tgm/tgm.php';
+	require get_template_directory() . '/includes/customizer.php';
+	load_template( trailingslashit( get_template_directory() ) . '/includes/go-pro/class-upgrade-pro.php' );
 
-/* Implement the About theme page */
-require get_template_directory() . '/includes/getstart/getstart.php';
+	/* Plugin Activation */
+	require get_template_directory() . '/includes/getstart/plugin-activation.php';
 
-require get_template_directory() . '/includes/product-create.php';
+	/* Implement the About theme page */
+	require get_template_directory() . '/includes/getstart/getstart.php';
 
-if( class_exists( 'Whizzie' ) ) {
-	$Whizzie = new Whizzie();
+	require get_template_directory() . '/includes/product-create.php';
+
+	if( class_exists( 'Whizzie' ) ) {
+		$Whizzie = new Whizzie();
+	}
 }
+add_action('after_setup_theme', 'fitness_elementor_enqueue_setting');
 
 ?>

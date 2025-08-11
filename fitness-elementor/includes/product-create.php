@@ -13,6 +13,28 @@ class Whizzie {
 
 	public static function fitness_elementor_setup_widgets(){
 
+	set_theme_mod( 'fitness_elementor_header_phone_number', '+1234567890' );
+	set_theme_mod( 'fitness_elementor_header_location', '45 Street Area , House Newyork City' );
+	set_theme_mod( 'fitness_elementor_header_email', 'Fitnessgym@gmail.com' );
+	set_theme_mod('fitness_elementor_social_links_settings', array(
+		array(
+			"link_text" => "fab fa-instagram",
+			"link_url" => "www.instagram.com"
+		),
+		array(
+			"link_text" => "fab fa-twitter",
+			"link_url" => "www.twitter.com"
+		),
+		array(
+			"link_text" => "fab fa-youtube",
+			"link_url" => "www.youtube.com"
+		),
+		array(
+			"link_text" => "fab fa-linkedin-in",
+			"link_url" => "www.linkedin.com"
+		)
+	));
+
 	$fitness_elementor_product_image_gallery = array();
 	$fitness_elementor_product_ids = array();
 

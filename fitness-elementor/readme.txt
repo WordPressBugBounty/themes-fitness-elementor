@@ -1,9 +1,9 @@
 === Fitness Elementor ===
 Contributors: wpelemento
 Requires at least: 5.0
-Stable tag: 0.3.3
+Stable tag: 0.3.8
 Requires PHP: 5.6
-Tested up to: 6.7
+Tested up to: 6.8
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: e-commerce, portfolio, education, wide-blocks, one-column, two-columns, right-sidebar, left-sidebar, grid-layout, three-columns, four-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, flexible-header, footer-widgets, full-width-template, editor-style, sticky-post, theme-options, threaded-comments, translation-ready
@@ -44,6 +44,20 @@ TGMPA
 * https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
 * License: GNU General Public License v2.0
 
+WOW JS
+* Matthieu Aussaguel
+* Copyright 2016, Matthieu Aussaguel
+* https://github.com/matthieua/WOW
+* License: GPLv3
+* https://github.com/matthieua/WOW/blob/master/README.md
+
+Animate CSS
+* Daniel Eden
+* Copyright 2021 Daniel Eden
+* https://github.com/animate-css/animate.css
+* License: 2.1
+* https://github.com/animate-css/animate.css/blob/main/LICENSE
+
 Images used in screenshots.
 License 	: CC0 1.0 Universal (CC0 1.0)
 License URI : https://pxhere.com/en/license, CC0
@@ -54,6 +68,36 @@ License URI : https://pxhere.com/en/license, CC0
 Source 		: https://pxhere.com/en/photo/1165965
 
 == Changelog ==
+
+= July-16-2025 :: 0.3.8
+
+* Added blog post animation.
+* Added blog post animation show hide option.
+* Updated woocommerce login form template.
+* Added responsive option for footer widget alignment.
+
+= June-11-2025 :: 0.3.7
+
+* Added demo import for header.
+* Prefixing webfont loader function.
+
+= May-20-2025 :: 0.3.6
+
+* Added default footer widget.
+* Tested upto 6.8.
+* Resolved issue for init function.
+* Updated getstarted notice function.
+
+= April-15-2025 :: 0.3.5
+
+* Added related post.
+* Added enable / disable related post option.
+
+= March-27-2025 :: 0.3.4
+
+* Added progress bar position option.
+* Added progress bar color option.
+* Updated woocommerce form-login.php file.
 
 = February-14-2025 :: 0.3.3
 

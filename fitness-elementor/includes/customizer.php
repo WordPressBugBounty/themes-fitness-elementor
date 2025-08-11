@@ -644,6 +644,83 @@ if ( class_exists("Kirki")){
 
 	Kirki::add_field( 'theme_config_id', [
 		'type'        => 'custom',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_progress_bar_position_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Progress Bar Position', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+		'active_callback'  => [
+			[
+				'setting'  => 'fitness_elementor_progress_bar',
+				'operator' => '===',
+				'value'    => true,
+			],
+		]
+	] );
+
+	Kirki::add_field( 'theme_config_id', array(
+		'type'        => 'select',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_progress_bar_position',
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => 'top',
+		'choices'     => [
+			'top' => esc_html__( 'Top', 'fitness-elementor' ),
+			'bottom' => esc_html__( 'Bottom', 'fitness-elementor' ),
+		],
+		'active_callback'  => [
+			[
+				'setting'  => 'fitness_elementor_progress_bar',
+				'operator' => '===',
+				'value'    => true,
+			],
+		]
+	) );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_progress_bar_color_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Progress Bar Color', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+		'active_callback'  => [
+			[
+				'setting'  => 'fitness_elementor_progress_bar',
+				'operator' => '===',
+				'value'    => true,
+			],
+		]
+	] );
+
+	Kirki::add_field( 'theme_config_id', array(
+		'settings'    => 'fitness_elementor_progress_bar_color',
+		'tab'      => 'general',
+		'label'       => __( 'Color', 'fitness-elementor' ),
+		'type'        => 'color',
+		'section'     => 'fitness_elementor_additional_setting',
+		'transport' => 'auto',
+		'default'     => '#C1E503',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'output' => array(
+			array(
+				'element'  => '#elemento-progress-bar',
+				'property' => 'background-color',
+			),
+		),
+		'active_callback'  => [
+			[
+				'setting'  => 'fitness_elementor_progress_bar',
+				'operator' => '===',
+				'value'    => true,
+			],
+		]
+	) );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
 		'settings'    => 'fitness_elementor_single_page_layout_heading',
 		'section'     => 'fitness_elementor_additional_setting',
 		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Single Page Layout', 'fitness-elementor' ) . '</h3>',
@@ -787,6 +864,25 @@ if ( class_exists("Kirki")){
 		],
 		'priority'       => 160,
 	) );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'      => 'blog-post',
+		'settings'    => 'fitness_elementor_enable_post_animation_heading',
+		'section'     => 'fitness_elementor_blog_post',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Animation', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'tab'      => 'blog-post',
+		'settings'    => 'fitness_elementor_enable_post_animation',
+		'label'       => esc_html__( 'Enable or Disable Blog Post Animation', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_blog_post',
+		'default'     => true,
+		'priority'    => 10,
+	] );
 
 	Kirki::add_field( 'theme_config_id', [
 		'type'        => 'custom',
@@ -985,6 +1081,25 @@ if ( class_exists("Kirki")){
 			),
 		),
 	) );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'      => 'single-post',
+		'settings'    => 'fitness_elementor_show_related_post_heading',
+		'section'     => 'fitness_elementor_blog_post',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Related post', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'tab'      => 'single-post',
+		'settings'    => 'fitness_elementor_show_related_post',
+		'label'       => esc_html__( 'Enable or Disable Related post', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_blog_post',
+		'default'     => true,
+		'priority'    => 10,
+	] );
 	    
 	// WOOCOMMERCE SETTINGS
 
@@ -1353,7 +1468,14 @@ if ( class_exists("Kirki")){
 		'type'        => 'select',
 		'settings'    => 'fitness_elementor_footer_widget_alignment',
 		'section'     => 'fitness_elementor_footer_section',
-		'default'     => 'left',
+		'default'     =>[
+			'desktop' => 'left',
+			'tablet'  => 'left',
+			'mobile'  => 'center',
+		],
+		'responsive' => true,
+		'label'       => __( 'Widget Alignment', 'fitness-elementor' ),
+		'transport' => 'auto',
 		'choices'     => [
 			'center' => esc_html__( 'center', 'fitness-elementor' ),
 			'right' => esc_html__( 'right', 'fitness-elementor' ),
@@ -1363,6 +1485,11 @@ if ( class_exists("Kirki")){
 			array(
 				'element'  => '.footer-area',
 				'property' => 'text-align',
+				'media_query' => [
+					'desktop' => '@media (min-width: 1024px)',
+					'tablet'  => '@media (min-width: 768px) and (max-width: 1023px)',
+					'mobile'  => '@media (max-width: 767px)',
+				],
 			),
 		),
 	) );

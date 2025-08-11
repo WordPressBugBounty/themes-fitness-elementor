@@ -16,37 +16,66 @@
   <?php if( get_theme_mod( 'fitness_elementor_show_footer_widget',true)) : ?>
     <div class="footer-widget">
       <div class="container">
-        <?php if ( is_active_sidebar( 'footer1-sidebar' ) || is_active_sidebar( 'footer2- sidebar' ) || is_active_sidebar( 'footer3-sidebar' ) || is_active_sidebar( 'footer4-sidebar' ) ) : ?>
-        <?php $count = 0;
-          if ( is_active_sidebar('footer1-sidebar') ) : $count++; endif; 
-          if ( is_active_sidebar('footer2-sidebar') ) : $count++; endif; 
-          if ( is_active_sidebar('footer3-sidebar') ) : $count++; endif; 
-          if ( is_active_sidebar('footer4-sidebar') ) : $count++; endif;
-          $row = 'col-lg-'. 12/$count .' col-md-'. 12/$count .' col-sm-12';
+        <?php
+          // Check if any footer sidebar is active
+          $fitness_elementor_any_sidebar_active = false;
+          for ( $fitness_elementor_i = 1; $fitness_elementor_i <= 4; $fitness_elementor_i++ ) {
+            if ( is_active_sidebar( "footer{$fitness_elementor_i}-sidebar" ) ) {
+              $fitness_elementor_any_sidebar_active = true;
+              break;
+            }
+          }
+          // Count active for responsive column classes
+          $fitness_elementor_active_sidebars = 0;
+          if ( $fitness_elementor_any_sidebar_active ) {
+            for ( $fitness_elementor_i = 1; $fitness_elementor_i <= 4; $fitness_elementor_i++ ) {
+              if ( is_active_sidebar( "footer{$fitness_elementor_i}-sidebar" ) ) {
+                $fitness_elementor_active_sidebars++;
+              }
+            }
+          }
+          $fitness_elementor_col_class = $fitness_elementor_active_sidebars > 0 ? 'col-lg-' . (12 / $fitness_elementor_active_sidebars) . ' col-md-6 col-sm-12' : 'col-lg-3 col-md-6 col-sm-12';
         ?>
         <div class="row pt-2">
-            <?php if ( is_active_sidebar('footer1-sidebar') ) : ?>
-                <div class="footer-area <?php echo $row ?>">
-                    <?php dynamic_sidebar('footer1-sidebar'); ?>
-                </div>
-            <?php endif; ?>
-            <?php if ( is_active_sidebar('footer2-sidebar') ) : ?>
-                <div class="footer-area <?php echo $row ?>">
-                    <?php dynamic_sidebar('footer2-sidebar'); ?>
-                </div>
-            <?php endif; ?>
-            <?php if ( is_active_sidebar('footer3-sidebar') ) : ?>
-                <div class="footer-area <?php echo $row ?>">
-                    <?php dynamic_sidebar('footer3-sidebar'); ?>
-                </div>
-            <?php endif; ?>
-            <?php if ( is_active_sidebar('footer4-sidebar') ) : ?>
-                <div class="footer-area <?php echo $row ?>">
-                    <?php dynamic_sidebar('footer4-sidebar'); ?>
-                </div>
-            <?php endif; ?>
+          <?php for ( $fitness_elementor_i = 1; $fitness_elementor_i <= 4; $fitness_elementor_i++ ) : ?>
+            <div class="footer-area <?php echo esc_attr($fitness_elementor_col_class); ?>">
+              <?php if ( $fitness_elementor_any_sidebar_active && is_active_sidebar("footer{$fitness_elementor_i}-sidebar") ) : ?>
+                <?php dynamic_sidebar("footer{$fitness_elementor_i}-sidebar"); ?>
+              <?php elseif ( ! $fitness_elementor_any_sidebar_active ) : ?>
+                  <?php if ( $fitness_elementor_i === 1 ) : ?>
+                    <aside role="complementary" aria-label="<?php echo esc_attr__( 'footer1', 'fitness-elementor' ); ?>" id="Search" class="sidebar-widget">
+                      <h4 class="title" ><?php esc_html_e( 'Search', 'fitness-elementor' ); ?></h4>
+                      <?php get_search_form(); ?>
+                    </aside>
+
+                  <?php elseif ( $fitness_elementor_i === 2 ) : ?>
+                      <aside role="complementary" aria-label="<?php echo esc_attr__( 'footer2', 'fitness-elementor' ); ?>" id="archives" class="sidebar-widget">
+                      <h4 class="title" ><?php esc_html_e( 'Archives', 'fitness-elementor' ); ?></h4>
+                      <ul>
+                          <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+                      </ul>
+                      </aside>
+                  <?php elseif ( $fitness_elementor_i === 3 ) : ?>
+                    <aside role="complementary" aria-label="<?php echo esc_attr__( 'footer3', 'fitness-elementor' ); ?>" id="meta" class="sidebar-widget">
+                      <h4 class="title"><?php esc_html_e( 'Meta', 'fitness-elementor' ); ?></h4>
+                      <ul>
+                        <?php wp_register(); ?>
+                        <li><?php wp_loginout(); ?></li>
+                        <?php wp_meta(); ?>
+                      </ul>
+                    </aside>
+                  <?php elseif ( $fitness_elementor_i === 4 ) : ?>
+                    <aside role="complementary" aria-label="<?php echo esc_attr__( 'footer4', 'fitness-elementor' ); ?>" id="categories" class="sidebar-widget">
+                      <h4 class="title" ><?php esc_html_e( 'Categories', 'fitness-elementor' ); ?></h4>
+                      <ul>
+                          <?php wp_list_categories('title_li=');  ?>
+                      </ul>
+                    </aside>
+                  <?php endif; ?>
+              <?php endif; ?>
+            </div>
+          <?php endfor; ?>
         </div>
-        <?php endif; ?>
       </div>
     </div>
   <?php endif; ?>  
@@ -103,7 +132,7 @@
     </div>
   <?php endif; ?>
   <?php if(get_theme_mod('fitness_elementor_progress_bar', false )== true): ?>
-    <div id="elemento-progress-bar" class="theme-progress-bar top"></div>
+    <div id="elemento-progress-bar" class="theme-progress-bar <?php if( get_theme_mod( 'fitness_elementor_progress_bar_position','top') == 'top') { ?> top <?php } else { ?> bottom <?php } ?>"></div>
   <?php endif; ?>
   <?php if(get_theme_mod('fitness_elementor_cursor_outline', false )== true): ?>
 			<!-- Custom cursor -->
