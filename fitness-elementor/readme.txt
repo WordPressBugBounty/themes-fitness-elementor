@@ -1,16 +1,15 @@
 === Fitness Elementor ===
 Contributors: wpelemento
 Requires at least: 5.0
-Stable tag: 0.3.8
+Stable tag: 0.4.9
 Requires PHP: 5.6
-Tested up to: 6.8
+Tested up to: 6.9
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: e-commerce, portfolio, education, wide-blocks, one-column, two-columns, right-sidebar, left-sidebar, grid-layout, three-columns, four-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, flexible-header, footer-widgets, full-width-template, editor-style, sticky-post, theme-options, threaded-comments, translation-ready
-
+Tags: e-commerce, portfolio, education, wide-blocks, one-column, two-columns, right-sidebar, left-sidebar, grid-layout, three-columns, four-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, flexible-header, footer-widgets, full-width-template, editor-style, sticky-post, theme-options, threaded-comments, translation-ready, rtl-language-support
 == Description ==
 
-Fitness Elementor WordPress Theme is designed especially for businesses like fitness centers, yoga centers, gyms, health clubs, personal trainers, yoga classes, karate classes, and other fitness-related businesses. The theme comes with a sporty layout that is suitable for fitness-related websites. To create and launch a website using this theme you don’t require a web developer to do the work for you. You can easily install and use this theme by yourself and create a professional-looking website for your business. This theme is Woocommerce ready with easy drag and drop customizations. Whether you are a fitness trainer, athlete, gym instructor, gym equipment dealer, yoga teacher, health coach, nutritionist, fitness club owner, life coach, etc. then this theme id for you. It cannot just be used by fitness businesses to promote their fitness centers but can also be used by fitness bloggers to share their fitness journey and fitness-related tips with visitors. Furthermore, the theme is mobile-friendly and makes your website accessible through all mobile devices. This is an important feature these days as most users usually browse with their mobile phones as it is handy. Moreover, the theme comes with all the necessary features to help you create the perfect website. It is cross-browser compatible to help your website be accessible through any web browser. It supports RTL and is translation ready to help translate the text on your website to multiple local and international languages for better user navigation and experience. Additionally, the theme also comes with various customization options to help you give your website a unique look and a personalized touch to make it stand out from the competition. So, if you are looking for a WordPress Theme to take your fitness business online, the Fitness Elementor WordPress Theme is the right choice for you.
+Fitness Elementor is a modern and sporty website theme created for fitness centers, gyms, yoga studios, health clubs, personal trainers, karate classes, and other fitness-related businesses looking to build a strong online presence with ease. It features a dynamic layout suitable for promoting fitness programs, training sessions, gym equipment, yoga classes, wellness coaching, nutrition services, and athletic activities, making it ideal for fitness trainers, athletes, instructors, health coaches, life coaches, and fitness bloggers alike. The theme allows users to create a professional-looking website without hiring a developer, offering simple installation and intuitive customization options. It supports eCommerce functionality through WooCommerce, enabling online bookings, product sales, and membership plans, while Contact Form 7 helps manage inquiries and client communication. Fully responsive and mobile-friendly, the layout ensures smooth performance across smartphones, tablets, and desktops. Cross-browser compatibility, RTL and translation readiness, and flexible design settings allow businesses to personalize their site, reach a wider audience, and stand out in the competitive fitness industry.
 
 == Resources ==
 
@@ -68,6 +67,62 @@ License URI : https://pxhere.com/en/license, CC0
 Source 		: https://pxhere.com/en/photo/1165965
 
 == Changelog ==
+
+= January-20-2026 :: 0.4.9
+
+* Updated rtl.css file.
+* Added hover effect on single post featured image.
+* Resolve css error.
+* Added menu in demo import.
+* Fetching products in shop page.
+* Resolve shop page css.
+* Resolve tgm plugin error. 
+
+= January-1-2026 :: 0.4.8
+
+* Fixed minor error.
+
+= December-12-2025 :: 0.4.7
+
+* Updated getstarted.
+* Updated pot file.
+* Tested upto 6.9.
+* Getstarted notice issue resolve.
+
+= December-1-2025 :: 0.4.6
+
+* Fixed minor error.
+
+= November-6-2025 :: 0.4.5
+
+* Added sticky sidebar.
+* Remove unwanted css.
+
+= October-31-2025 :: 0.4.4
+
+* Fixed minor errors.
+
+= October-28-2025 :: 0.4.3
+
+* Added animation on footer and sidebar.
+* Added sticky copyright.
+* Resolve product demo import issue.
+
+= October-1-2025 :: 0.4.2
+
+* Fixed minor errors.
+
+= September-19-2025 :: 0.4.1
+
+* Added rtl language support
+
+= September-1-2025 :: 0.4
+
+* Fixed minor errors.
+
+= August-16-2025 :: 0.3.9
+
+* Corrected minor errors.
 
 = July-16-2025 :: 0.3.8
 

@@ -8,7 +8,8 @@
  */
 ?>
 
-<div class="sidebar-area">
+<div class="sidebar-area <?php if( get_theme_mod('fitness_elementor_enable_sticky_sidebar', false) == 1) { ?> sidebar-sticky <?php } else { ?> close-sticky <?php } ?> 
+  <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_sidebar_animation', true) ? 'zoomInRight wow' : '' ); ?>">
   <?php if ( ! dynamic_sidebar( 'fitness-elementor-sidebar' ) ) : ?>
     <div role="complementary" aria-label="<?php echo esc_attr__( 'sidebar1', 'fitness-elementor' ); ?>" id="Search" class="sidebar-widget">
       <h4 class="title" ><?php esc_html_e( 'Search', 'fitness-elementor' ); ?></h4>

@@ -36,7 +36,7 @@
           }
           $fitness_elementor_col_class = $fitness_elementor_active_sidebars > 0 ? 'col-lg-' . (12 / $fitness_elementor_active_sidebars) . ' col-md-6 col-sm-12' : 'col-lg-3 col-md-6 col-sm-12';
         ?>
-        <div class="row pt-2">
+        <div class="row pt-2 <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_footer_animation', true) ? 'zoomInUp wow' : '' ); ?>">
           <?php for ( $fitness_elementor_i = 1; $fitness_elementor_i <= 4; $fitness_elementor_i++ ) : ?>
             <div class="footer-area <?php echo esc_attr($fitness_elementor_col_class); ?>">
               <?php if ( $fitness_elementor_any_sidebar_active && is_active_sidebar("footer{$fitness_elementor_i}-sidebar") ) : ?>
@@ -80,7 +80,7 @@
     </div>
   <?php endif; ?>  
   <?php if( get_theme_mod( 'fitness_elementor_show_footer_copyright',true)) : ?>
-    <div class="footer-copyright">
+    <div class="footer-copyright <?php if( get_theme_mod( 'fitness_elementor_sticky_copyright_enable','off') == 'on') { ?>sticky-copyright<?php } else { ?>close-sticky <?php } ?>">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-6 align-self-center">

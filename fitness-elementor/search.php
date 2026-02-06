@@ -130,7 +130,8 @@ get_header(); ?>
           </div>
         </div>
         <div class="col-lg-4 col-md-4">
-          <div class="sidebar-area">
+          <div class="sidebar-area <?php if( get_theme_mod('fitness_elementor_enable_sticky_sidebar', false) == 1) { ?> sidebar-sticky <?php } else { ?> close-sticky <?php } ?> 
+            <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_sidebar_animation', true) ? 'zoomInRight wow' : '' ); ?>">
             <?php
               dynamic_sidebar('sidebar-2');
             ?>
@@ -165,14 +166,16 @@ get_header(); ?>
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
-          <div class="sidebar-area">
+          <div class="sidebar-area <?php if( get_theme_mod('fitness_elementor_enable_sticky_sidebar', false) == 1) { ?> sidebar-sticky <?php } else { ?> close-sticky <?php } ?> 
+            <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_sidebar_animation', true) ? 'zoomInRight wow' : '' ); ?>">
             <?php
               dynamic_sidebar('sidebar-2');
             ?>
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
-          <div class="sidebar-area sidebar-three">
+          <div class="sidebar-area sidebar-three <?php if( get_theme_mod('fitness_elementor_enable_sticky_sidebar', false) == 1) { ?> sidebar-sticky <?php } else { ?> close-sticky <?php } ?> 
+            <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_sidebar_animation', true) ? 'zoomInRight wow' : '' ); ?>">
             <?php
               dynamic_sidebar('sidebar-3');
             ?>

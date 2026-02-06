@@ -27,6 +27,6 @@ function fitness_elementor_register_recommended_plugins() {
 		),
 	);
 	$config = array();
-	fitness_elementor_tgmpa( $plugins, $config );
+	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'fitness_elementor_register_recommended_plugins' );

@@ -50,7 +50,8 @@ get_header(); ?>
       <?php elseif ($fitness_elementor_single_page_layout == 'Left Sidebar') : ?>
         <div class="row">
           <div class="col-lg-4 col-md-4">
-            <div class="sidebar-area">
+            <div class="sidebar-area <?php if( get_theme_mod('fitness_elementor_enable_sticky_sidebar', false) == 1) { ?> sidebar-sticky <?php } else { ?> close-sticky <?php } ?> 
+              <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_sidebar_animation', true) ? 'zoomInRight wow' : '' ); ?>">
               <?php
                 dynamic_sidebar('sidebar-2');
               ?>
@@ -96,7 +97,8 @@ get_header(); ?>
             ?>
           </div>
           <div class="col-lg-4 col-md-4">
-            <div class="sidebar-area">
+            <div class="sidebar-area <?php if( get_theme_mod('fitness_elementor_enable_sticky_sidebar', false) == 1) { ?> sidebar-sticky <?php } else { ?> close-sticky <?php } ?> 
+              <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_sidebar_animation', true) ? 'zoomInRight wow' : '' ); ?>">
               <?php
                 dynamic_sidebar('sidebar-2');
               ?>

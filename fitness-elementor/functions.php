@@ -74,6 +74,7 @@ if (!function_exists('fitness_elementor_enqueue_scripts')) {
 
 		require get_parent_theme_file_path( '/includes/color-setting/custom-color-control.php' );
 		wp_add_inline_style( 'fitness-elementor-style',$fitness_elementor_theme_custom_setting_css );
+		wp_style_add_data('fitness-elementor-style', 'rtl', 'replace');
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
@@ -162,7 +163,7 @@ if (!function_exists('fitness_elementor_after_setup_theme')) {
 
 		global $pagenow;
 		
-		if (is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] )) {
+		if ( is_admin() && $pagenow === 'themes.php' && (!isset($_GET['page']) || $_GET['page'] !== 'fitness_elementor_about')) {
 			add_action('admin_notices', 'fitness_elementor_activation_notice');
 		}
 
@@ -173,8 +174,10 @@ if (!function_exists('fitness_elementor_after_setup_theme')) {
 }
 
 function fitness_elementor_activation_notice() {
-	echo '<div class="notice notice-info wpele-activation-notice is-dismissible">';
-		echo '<div class="notice-body">';
+	$fitness_elementor_meta = get_option( 'fitness_elementor_admin_notice' );
+	if (!$fitness_elementor_meta) {
+			echo '<div id="fitness-elementor-welcome-notice" class="notice notice-info wpele-activation-notice is-dismissible">';
+			echo '<div class="notice-body">';
 			echo '<div class="notice-content">';
 				echo '<h2>'. esc_html__( 'Welcome to WPElemento', 'fitness-elementor' ) .'</h2>';
 				echo '<p>'. esc_html__( 'Thank you for choosing Fitness Elementor theme .To setup the theme, please visit the get started page.', 'fitness-elementor' ) .'</p>';
@@ -187,6 +190,7 @@ function fitness_elementor_activation_notice() {
 			echo '</div>';
 		echo '</div>';
 	echo '</div>';
+}
 }
 
 /* Get post comments */
@@ -468,7 +472,36 @@ function fitness_elementor_enqueue_setting() {
 	if( class_exists( 'Whizzie' ) ) {
 		$Whizzie = new Whizzie();
 	}
+
+	add_filter('wpelemento_importer_plugins_list', function ($plugins) {
+    $desired_order = ['woocommerce', 'yith-woocommerce-wishlist' , 'woolentor-addons'];
+    foreach (['all', 'install', 'update', 'activate'] as $section) {
+        if (!isset($plugins[$section])) continue;
+
+        $reordered = [];
+
+        foreach ($desired_order as $slug) {
+            if (isset($plugins[$section][$slug])) {
+                $reordered[$slug] = $plugins[$section][$slug];
+                unset($plugins[$section][$slug]);
+            }
+        }
+        $plugins[$section] = $reordered + $plugins[$section];
+    }
+
+    return $plugins;
+});
 }
 add_action('after_setup_theme', 'fitness_elementor_enqueue_setting');
+
+function fitness_elementor_dismissed_notice() {
+	update_option( 'fitness_elementor_admin_notice', true );
+}
+add_action( 'wp_ajax_fitness_elementor_dismissed_notice', 'fitness_elementor_dismissed_notice' );
+
+add_action('after_switch_theme', 'fitness_elementor_getstart_setup_options');
+function fitness_elementor_getstart_setup_options () {
+    update_option('fitness_elementor_admin_notice', false );
+}
 
 ?>

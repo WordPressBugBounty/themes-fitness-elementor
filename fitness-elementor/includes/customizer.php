@@ -558,6 +558,54 @@ if ( class_exists("Kirki")){
 	Kirki::add_field( 'theme_config_id', [
 		'type'        => 'custom',
 		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_enable_sidebar_animation_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Animation', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_enable_sidebar_animation',
+		'label'       => esc_html__( 'Enable or Disable Sidebar Animation', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => true,
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_enable_footer_animation',
+		'label'       => esc_html__( 'Enable or Disable Footer Animation', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => true,
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_enable_sidebar_sticky_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Sticky Sidebar', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'tab'      => 'general',
+		'settings'    => 'fitness_elementor_enable_sticky_sidebar',
+		'label'       => esc_html__( 'Enable or Disable Sticky Sidebar', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => false,
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'      => 'general',
 		'settings'    => 'fitness_elementor_scroll_alignment_heading',
 		'section'     => 'fitness_elementor_additional_setting',
 		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Scroll To Top Position', 'fitness-elementor' ) . '</h3>',
@@ -1100,6 +1148,36 @@ if ( class_exists("Kirki")){
 		'default'     => true,
 		'priority'    => 10,
 	] );
+
+	Kirki::add_field( 'theme_config_id', [
+        'type'        => 'custom',
+        'tab'         => 'single-post',
+        'settings'    => 'fitness_elementor_show_single_post_featured_image_hover_heading',
+        'section'     => 'fitness_elementor_blog_post',
+        'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Featured Image Hover Effect', 'fitness-elementor' ) . '</h3>',
+        'priority'    => 10,
+    ] );
+
+    Kirki::add_field( 'theme_config_id', [
+    'type'     => 'select',
+    'tab'      => 'single-post',
+    'settings' => 'fitness_elementor_single_post_featured_image_hover',
+    'label'    => esc_html__( 'Select Featured Image Hover Effect', 'fitness-elementor' ),
+    'section'  => 'fitness_elementor_blog_post',
+    'default'  => 'none',
+    'priority' => 20,
+    'choices'  => [
+        'none'      => esc_html__( 'None', 'fitness-elementor' ),
+        'zoom-in'   => esc_html__( 'Zoom In', 'fitness-elementor' ),
+        'zoom-out'  => esc_html__( 'Zoom Out', 'fitness-elementor' ),
+        'scale'     => esc_html__( 'Scale', 'fitness-elementor' ),
+        'grayscale' => esc_html__( 'Grayscale', 'fitness-elementor' ),
+        'blur'      => esc_html__( 'Blur', 'fitness-elementor' ),
+        'bright'    => esc_html__( 'Bright', 'fitness-elementor' ),
+        'sepia'     => esc_html__( 'Sepia', 'fitness-elementor' ),
+        'translate' => esc_html__( 'Translate', 'fitness-elementor' ),
+    ],
+    ] );
 	    
 	// WOOCOMMERCE SETTINGS
 
@@ -1405,6 +1483,26 @@ if ( class_exists("Kirki")){
 		'section'  => 'fitness_elementor_footer_section',
 		'default'  => '',
 		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'settings'    => 'fitness_elementor_footer_sticky_heading',
+		'section'     => 'fitness_elementor_footer_section',
+			'default'         => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Footer Sticky Copyright', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'switch',
+		'settings'    => 'fitness_elementor_sticky_copyright_enable',
+		'label'       => esc_html__( ' Sticky Copyright Section Enable / Disable', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_footer_section',
+		'default'     => '0',
+		'priority'    => 10,
+		'choices'     => [
+			'on'  => esc_html__( 'Enable', 'fitness-elementor' ),
+			'off' => esc_html__( 'Disable', 'fitness-elementor' ),
+		],
 	] );
 
     Kirki::add_field( 'theme_config_id', [

@@ -145,7 +145,115 @@ class Whizzie {
 	foreach ( $fitness_elementor_product_ids as $fitness_elementor_product_id ) {
 	update_post_meta( $fitness_elementor_product_id, 'fitness_elementor_product_image_gallery', $fitness_elementor_product_image_gallery );
 	}
-}
 
+	/* Create Menu */
+            $fitness_elementor_menuname  = 'Main Menus';
+            $fitness_elementor_location  = 'main-menu';
+
+            $fitness_elementor_menu = wp_get_nav_menu_object( $fitness_elementor_menuname );
+
+            if ( ! $fitness_elementor_menu ) {
+            $fitness_elementor_menu_id = wp_create_nav_menu( $fitness_elementor_menuname );
+
+           // Home Page 
+			wp_update_nav_menu_item( $fitness_elementor_menu_id, 0, array(
+				'menu-item-title'     => __( 'Home', 'fitness-elementor' ),
+				'menu-item-url'       => home_url( '/' ),
+				'menu-item-type'      => 'custom',
+				'menu-item-status'    => 'publish',
+				'menu-item-position'  => 1,
+			) );
+
+			// About Us Page 
+			$fitness_elementor_about_id = wp_insert_post( array(
+			'post_type'   => 'page',
+			'post_content' => 'We are committed to providing reliable, professional, and result-oriented solutions tailored to meet individual needs. Our goal is to empower people with the right guidance, knowledge, and support to help them make informed decisions for a better future. <br><br> Our mission is to deliver high-quality services with honesty, transparency, and dedication. We focus on understanding client requirements and offering practical solutions that create long-term value. <br><br> With a client-centric approach, experienced professionals, and a commitment to excellence, we ensure every individual receives the attention and guidance they deserve. We believe in building trust through quality service and consistent results.',
+			'post_title'  => 'About Us',
+			'post_status' => 'publish',
+			) );
+
+			if ( $fitness_elementor_about_id ) {
+			wp_update_nav_menu_item( $fitness_elementor_menu_id, 0, array(
+			'menu-item-title'     => 'About Us',
+			'menu-item-object'    => 'page',
+			'menu-item-object-id' => $fitness_elementor_about_id,
+			'menu-item-type'      => 'post_type',
+			'menu-item-status'    => 'publish',
+            'menu-item-position'  => 2,
+			) );
+			}
+
+			// Pages Page 
+			$fitness_elementor_about_id = wp_insert_post( array(
+			'post_type'   => 'page',
+			'post_content' => 'We are committed to providing reliable, professional, and result-oriented solutions tailored to meet individual needs. Our goal is to empower people with the right guidance, knowledge, and support to help them make informed decisions for a better future. <br><br> Our mission is to deliver high-quality services with honesty, transparency, and dedication. We focus on understanding client requirements and offering practical solutions that create long-term value. <br><br> With a client-centric approach, experienced professionals, and a commitment to excellence, we ensure every individual receives the attention and guidance they deserve. We believe in building trust through quality service and consistent results.',
+			'post_title'  => 'Pages',
+			'post_status' => 'publish',
+			) );
+
+			if ( $fitness_elementor_about_id ) {
+			wp_update_nav_menu_item( $fitness_elementor_menu_id, 0, array(
+			'menu-item-title'     => 'Pages',
+			'menu-item-object'    => 'page',
+			'menu-item-object-id' => $fitness_elementor_about_id,
+			'menu-item-type'      => 'post_type',
+			'menu-item-status'    => 'publish',
+            'menu-item-position'  => 3,
+			) );
+			}
+
+			// Classes Page 
+			$fitness_elementor_about_id = wp_insert_post( array(
+			'post_type'   => 'page',
+			'post_content' => 'We are committed to providing reliable, professional, and result-oriented solutions tailored to meet individual needs. Our goal is to empower people with the right guidance, knowledge, and support to help them make informed decisions for a better future. <br><br> Our mission is to deliver high-quality services with honesty, transparency, and dedication. We focus on understanding client requirements and offering practical solutions that create long-term value. <br><br> With a client-centric approach, experienced professionals, and a commitment to excellence, we ensure every individual receives the attention and guidance they deserve. We believe in building trust through quality service and consistent results.',
+			'post_title'  => 'Classes',
+			'post_status' => 'publish',
+			) );
+
+			if ( $fitness_elementor_about_id ) {
+			wp_update_nav_menu_item( $fitness_elementor_menu_id, 0, array(
+			'menu-item-title'     => 'Classes',
+			'menu-item-object'    => 'page',
+			'menu-item-object-id' => $fitness_elementor_about_id,
+			'menu-item-type'      => 'post_type',
+			'menu-item-status'    => 'publish',
+            'menu-item-position'  => 4,
+			) );
+			}
+
+            // CREATE SHOP PAGE
+                $fitness_elementor_about_title = 'Shop';
+                $fitness_elementor_about_content = 'Lorem ipsum dolor sit amet...';
+
+                $shop_page = get_page_by_path('shop');
+                if ( !$shop_page ) {
+                    $fitness_elementor_about = array(
+                        'post_type'   => 'page',
+                        'post_title'  => $fitness_elementor_about_title,
+                        'post_content'=> $fitness_elementor_about_content,
+                        'post_status' => 'publish',
+                        'post_author' => 1,
+                        'post_name'   => 'shop' 
+                        );
+                        $fitness_elementor_about_id = wp_insert_post($fitness_elementor_about);
+                    } else {
+                        $fitness_elementor_about_id = $shop_page->ID;
+                    }
+
+                    wp_update_nav_menu_item($fitness_elementor_menu_id, 0, array(
+                        'menu-item-title'   => __('Shop', 'fitness-elementor'),
+                        'menu-item-classes' => 'shop',
+                        'menu-item-object-id' => $fitness_elementor_about_id,
+                        'menu-item-object'  => 'page',
+                        'menu-item-type'    => 'post_type',
+                        'menu-item-status'  => 'publish'
+                    ));
+            
+			/* ---------- Assign Menu Location ---------- */
+			$fitness_elementor_locations = get_theme_mod( 'nav_menu_locations', array() );
+			$fitness_elementor_locations[ $fitness_elementor_location ] = $fitness_elementor_menu_id;
+			set_theme_mod( 'nav_menu_locations', $fitness_elementor_locations );
+		}
+    }
 }
  

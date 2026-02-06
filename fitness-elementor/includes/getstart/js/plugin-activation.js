@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     'use strict';
-    var this_obj = fitness_elementor_plugin_activate_plugin;
+    var fitness_elementor_this_obj = fitness_elementor_plugin_activate_plugin;
 
     $('#wpelemento_importer_editor .plugin-activation-redirect a').addClass('wpi-redirect-to-dashboard');
 
@@ -9,12 +9,12 @@ jQuery(document).ready(function($) {
         event.preventDefault();
         var button = $(this);
         var slug = button.data('slug');
-        button.text(this_obj.installing + '...').addClass('updating-message');
+        button.text(fitness_elementor_this_obj.installing + '...').addClass('updating-message');
         wp.updates.installPlugin({
             slug: slug,
             success: function(data) {
                 button.attr('href', data.activateUrl);
-                button.text(this_obj.activating + '...');
+                button.text(fitness_elementor_this_obj.activating + '...');
                 button.removeClass('button-secondary updating-message fitness-elementor-plugin-install');
                 button.addClass('button-primary fitness-elementor-plugin-activate');
                 button.trigger('click');
@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
                 jQuery('.fitness-elementor-recommended-plugins .fitness-elementor-activation-note').css('display','block');
                 //console.log('error', data);
                 button.removeClass('updating-message');
-                button.text(this_obj.error);
+                button.text(fitness_elementor_this_obj.error);
             },
         });
     });
@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
 
         let redirect_url = '#';
         if ( data_plugin == 'wpelemento-importer' ) {
-          redirect_url = this_obj.addon_admin_url;
+          redirect_url = fitness_elementor_this_obj.addon_admin_url;
         } 
 
         event.preventDefault();
@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
                 type: 'GET',
                 url: url,
                 beforeSend: function() {
-                    button.text(this_obj.activating + '...');
+                    button.text(fitness_elementor_this_obj.activating + '...');
                     button.removeClass('button-secondary');
                     button.addClass('button-primary activate-now updating-message');
                 },
@@ -62,8 +62,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-   
     jQuery('.wpelementoimpoter-dashboard-page-btn').click(function(){
-        location.href = this_obj.wpelementoimpoter_admin_url;
+        location.href = fitness_elementor_this_obj.wpelementoimpoter_admin_url;
     });
 });

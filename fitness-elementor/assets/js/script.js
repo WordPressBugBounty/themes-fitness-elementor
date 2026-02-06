@@ -250,3 +250,39 @@ const fitness_elementor_progressBar = {
   },
 };
 fitness_elementor_progressBar.init();
+
+/* ===============================================
+   sticky copyright
+============================================= */
+
+window.addEventListener('scroll', function() {
+  var fitness_elementor_footer = document.querySelector('.sticky-copyright');
+  if (!fitness_elementor_footer) return; 
+
+  var fitness_elementor_scrollTop = window.scrollY || document.documentElement.fitness_elementor_scrollTop;
+
+  if (fitness_elementor_scrollTop >= 100) {
+    fitness_elementor_footer.classList.add('active-sticky');
+  }
+});
+
+/* ===============================================
+   sticky sidebar
+============================================= */
+
+window.addEventListener('scroll', function () {
+  var fitness_elementor_sidebar = document.querySelector('.sidebar-sticky');
+  if (!fitness_elementor_sidebar) return;
+
+  var fitness_elementor_scrollTop = window.scrollY || document.documentElement.scrollTop;
+  var fitness_elementor_windowHeight = window.innerHeight;
+  var fitness_elementor_documentHeight = document.documentElement.scrollHeight;
+
+  var fitness_elementor_isBottom = fitness_elementor_scrollTop + fitness_elementor_windowHeight >= fitness_elementor_documentHeight - 100;
+
+  if (fitness_elementor_scrollTop >= 100 && !fitness_elementor_isBottom) {
+    fitness_elementor_sidebar.classList.add('sidebar-fixed');
+  } else {
+    fitness_elementor_sidebar.classList.remove('sidebar-fixed');
+  }
+});
