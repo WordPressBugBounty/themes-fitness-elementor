@@ -530,6 +530,34 @@ if ( class_exists("Kirki")){
 		'default'     => '<h3 style="color: #2271b1; padding:5px 20px 5px 20px; background:#fff; margin:0;  box-shadow: 0 2px 4px rgba(0,0,0, .2); ">' . esc_html__( 'Enhance your header design now!', 'fitness-elementor' ) . '</h3><ul style="color: #121212; padding: 5px 20px 20px 30px; background:#fff; margin:0;" ><li style="list-style-type: square;" >' . esc_html__( 'Customize your header background color', 'fitness-elementor' ) . '</li><li style="list-style-type: square;" >'.esc_html__( 'Adjust icon and text font sizes', 'fitness-elementor' ) .'</li><li style="list-style-type: square;" >'.esc_html__( 'Explore enhanced typography options', 'fitness-elementor' ) .'</li><li style="list-style-type: square;" >'.esc_html__( '....and Much More', 'fitness-elementor' ) . '</li></ul><div style="background: #fff; padding: 0px 10px 10px 20px;"><a href="' . esc_url( __( 'https://www.wpelemento.com/products/fitness-wordpress-theme', 'fitness-elementor' ) ) . '" class="button button-primary" target="_blank">'. esc_html__( 'Upgrade for more', 'fitness-elementor' ) .'</a></div>',
 	) );
 
+	Kirki::add_field( 'theme_config_id', [
+    'type'     => 'custom',
+    'settings' => 'fitness_elementor_show_product_featured_image_hover_heading',
+    'section'  => 'fitness_elementor_woocommerce_settings',
+    'default'  => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1;">' . __( 'Product Featured Image Hover Effect', 'fitness-elementor' ) . '</h3>',
+    'priority' => 20,
+   ] );
+
+	Kirki::add_field( 'theme_config_id', [
+    'type'     => 'select',
+    'settings' => 'fitness_elementor_product_featured_image_hover',
+    'label'    => esc_html__( 'Product Featured Image Hover Effect', 'fitness-elementor' ),
+    'section'  => 'fitness_elementor_woocommerce_settings',
+    'default'  => 'none',
+    'priority' => 30,
+    'choices'  => [
+        'none'      => esc_html__( 'None', 'fitness-elementor' ),
+        'zoom-in'   => esc_html__( 'Zoom In', 'fitness-elementor' ),
+        'zoom-out'  => esc_html__( 'Zoom Out', 'fitness-elementor' ),
+        'scale'     => esc_html__( 'Scale', 'fitness-elementor' ),
+        'grayscale' => esc_html__( 'Grayscale', 'fitness-elementor' ),
+        'blur'      => esc_html__( 'Blur', 'fitness-elementor' ),
+        'bright'    => esc_html__( 'Bright', 'fitness-elementor' ),
+        'sepia'     => esc_html__( 'Sepia', 'fitness-elementor' ),
+        'translate' => esc_html__( 'Translate', 'fitness-elementor' ),
+    ],
+    ] );
+
 	//ADDITIONAL SETTINGS
 
 	Kirki::add_section( 'fitness_elementor_additional_setting',array(

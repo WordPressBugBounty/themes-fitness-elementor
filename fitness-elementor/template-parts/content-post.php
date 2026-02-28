@@ -17,7 +17,7 @@
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class('post-single mb-4'); ?>>
   <?php if ( has_post_thumbnail() && get_theme_mod( 'fitness_elementor_single_post_featured_image',true) ) { ?>
-    <div class="post-thumbnail post-img">
+    <div class="post-thumbnail post-img <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_post_animation', true) ? 'zoomInUp wow' : '' ); ?>">
       <?php the_post_thumbnail(''); ?>
     </div>
   <?php }?>

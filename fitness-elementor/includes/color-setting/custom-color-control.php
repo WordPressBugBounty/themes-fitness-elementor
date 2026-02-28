@@ -93,3 +93,59 @@
         .post-img:hover img{ transform: scale(1.1); }';
     }
 }
+
+// Product Featured Image Hover Effect
+    $fitness_elementor_show_featured = get_theme_mod('fitness_elementor_featured_image_hide_show', 1);
+    $fitness_elementor_hover_effect = get_theme_mod('fitness_elementor_product_featured_image_hover','none');
+
+    if ( $fitness_elementor_show_featured && $fitness_elementor_hover_effect !== 'none' ) {
+
+    $fitness_elementor_theme_custom_setting_css .= '
+    .product-img img{
+        transition: all 0.4s ease;
+    }';
+
+    if ( $fitness_elementor_hover_effect === 'zoom-in' ) {
+        $fitness_elementor_theme_custom_setting_css .= '
+        .product-img:hover img{
+            transform: scale(1.2);
+        }';
+    }
+
+    if ( $fitness_elementor_hover_effect === 'zoom-out' ) {
+        $fitness_elementor_theme_custom_setting_css .= '
+        .product-img img{ transform: scale(1.2); }
+        .product-img:hover img{ transform: scale(1); }';
+    }
+
+    if ( $fitness_elementor_hover_effect === 'grayscale' ) {
+        $fitness_elementor_theme_custom_setting_css .= '
+        .product-img img{ filter: grayscale(100%); }
+        .product-img:hover img{ filter: grayscale(0); }';
+    }
+
+    if ( $fitness_elementor_hover_effect === 'sepia' ) {
+        $fitness_elementor_theme_custom_setting_css .= '
+        .product-img:hover img{ filter: sepia(100%); }';
+    }
+
+    if ( $fitness_elementor_hover_effect === 'blur' ) {
+        $fitness_elementor_theme_custom_setting_css .= '
+        .product-img:hover img{ filter: blur(3px); }';
+    }
+
+    if ( $fitness_elementor_hover_effect === 'bright' ) {
+        $fitness_elementor_theme_custom_setting_css .= '
+        .product-img:hover img{ filter: brightness(1.3); }';
+    }
+
+    if ( $fitness_elementor_hover_effect === 'translate' ) {
+        $fitness_elementor_theme_custom_setting_css .= '
+        .product-img:hover img{ transform: translateY(-10px); }';
+    }
+
+    if ( $fitness_elementor_hover_effect === 'scale' ) {
+        $fitness_elementor_theme_custom_setting_css .= '
+        .product-img:hover img{ transform: scale(1.1); }';
+    }
+}   

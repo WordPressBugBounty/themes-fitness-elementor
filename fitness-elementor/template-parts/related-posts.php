@@ -21,7 +21,7 @@ $fitness_elementor_post_args['category__in'] = $fitness_elementor_terms_ids;
 $fitness_elementor_related_posts = new WP_Query( $fitness_elementor_post_args );
 
 if ( $fitness_elementor_related_posts->have_posts() ) : ?>
-    <div class="related-post">
+    <div class="related-post <?php echo esc_attr( get_theme_mod('fitness_elementor_enable_post_animation', true) ? 'zoomInUp wow' : '' ); ?>">
         <h3><?php echo esc_html__('Related Post' ,'fitness-elementor' );?></h3>
         <div class="row">
             <?php while ( $fitness_elementor_related_posts->have_posts() ) : $fitness_elementor_related_posts->the_post(); ?>

@@ -1,12 +1,13 @@
 === Fitness Elementor ===
 Contributors: wpelemento
 Requires at least: 5.0
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 Requires PHP: 5.6
 Tested up to: 6.9
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: e-commerce, portfolio, education, wide-blocks, one-column, two-columns, right-sidebar, left-sidebar, grid-layout, three-columns, four-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, flexible-header, footer-widgets, full-width-template, editor-style, sticky-post, theme-options, threaded-comments, translation-ready, rtl-language-support
+
 == Description ==
 
 Fitness Elementor is a modern and sporty website theme created for fitness centers, gyms, yoga studios, health clubs, personal trainers, karate classes, and other fitness-related businesses looking to build a strong online presence with ease. It features a dynamic layout suitable for promoting fitness programs, training sessions, gym equipment, yoga classes, wellness coaching, nutrition services, and athletic activities, making it ideal for fitness trainers, athletes, instructors, health coaches, life coaches, and fitness bloggers alike. The theme allows users to create a professional-looking website without hiring a developer, offering simple installation and intuitive customization options. It supports eCommerce functionality through WooCommerce, enabling online bookings, product sales, and membership plans, while Contact Form 7 helps manage inquiries and client communication. Fully responsive and mobile-friendly, the layout ensures smooth performance across smartphones, tablets, and desktops. Cross-browser compatibility, RTL and translation readiness, and flexible design settings allow businesses to personalize their site, reach a wider audience, and stand out in the competitive fitness industry.
@@ -67,6 +68,13 @@ License URI : https://pxhere.com/en/license, CC0
 Source 		: https://pxhere.com/en/photo/1165965
 
 == Changelog ==
+
+= February-12-2026 :: 0.5.1
+
+* Added hover effect on product featured image.
+* Added animation on single post.
+* Added animation on related post.
+* Hover color on getstarted button.
 
 = February-9-2026 :: 0.5.0
 

@@ -405,6 +405,9 @@ function fitness_elementor_the_breadcrumb() {
 
 add_action( 'wp_enqueue_scripts', 'fitness_elementor_logo_resizer' );
 
+add_filter( 'woocommerce_single_product_image_thumbnail_html', function( $html ) {
+    return '<div class="product-img">' . $html . '</div>';
+});
 
 /**
  * Change number or products per row to 3

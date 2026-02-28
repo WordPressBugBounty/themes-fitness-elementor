@@ -416,6 +416,19 @@ td.update-link:hover,
     background: #ff2c6f;
 }
 
+.quick-btn a:hover{
+    background:#2195af;
+}
+.premium-btn a:hover{
+    background:#2195af;
+}
+.demo-btn a:hover{
+    background:#2195af; 
+}
+.doc-btn a:hover{
+    background:#2195af; 
+}
+
 .premium-features ul li {
     margin-bottom: 10px;
 }
@@ -590,8 +603,8 @@ td.update-link:hover,
 }
 
 .fitness-elementor-recommended-plugins a.button:hover {
-    border: 1px solid #1E2957;
-    background: #1E2957;
+    border: 1px solid #2195af;
+    background: #2195af;
 }
 .fitness-elementor-recommended-plugins a.button:focus {
     border: 1px solid #1E2957;
