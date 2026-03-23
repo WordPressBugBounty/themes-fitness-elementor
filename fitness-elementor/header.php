@@ -32,6 +32,46 @@
 	}
 ?>
 
+<?php 
+if( get_theme_mod('fitness_elementor_preloader_hide', false ) == true ){ 
+
+	$fitness_elementor_type = get_theme_mod('fitness_elementor_preloader_type','diamond');
+?>
+<div class="frame">
+	<div class="loader preloader-types">
+
+		<?php if($fitness_elementor_type == 'diamond'){ ?>
+
+			<div class="preloader">
+				<div class="diamond">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+
+		<?php } elseif($fitness_elementor_type == 'orbit'){ ?>
+
+			<div class="orbit-loader">
+				<div class="orbit-center"></div>
+				<div class="orbit-ring">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+
+		<?php } elseif($fitness_elementor_type == 'liquid'){ ?>
+
+			<div class="liquid-loader">
+				<div class="liquid-blob"></div>
+			</div>
+
+		<?php } ?>
+
+	</div>
+</div>
+<?php } ?>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'fitness-elementor' ); ?></a>
 
 <div class="topheader py-2">
@@ -95,7 +135,7 @@
 					<?php
 						wp_nav_menu( array(
 							'theme_location' => 'main-menu',
-							'container' => 'false'
+							'container' => false
 						));
 					?>
 					<button class="close-menu my-2 p-2" type="button">

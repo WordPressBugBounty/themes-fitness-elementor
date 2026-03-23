@@ -1,7 +1,7 @@
 === Fitness Elementor ===
 Contributors: wpelemento
 Requires at least: 5.0
-Stable tag: 0.5.1
+Stable tag: 0.5.2
 Requires PHP: 5.6
 Tested up to: 6.9
 License: GPLv3.0 or later
@@ -68,6 +68,14 @@ License URI : https://pxhere.com/en/license, CC0
 Source 		: https://pxhere.com/en/photo/1165965
 
 == Changelog ==
+
+= March-12-2026 :: 0.5.2
+ 
+* Added customizer setting for two more preloders.
+* Added customizer setting for select preloader background image.
+* Resolve minor issue.
+* update pot file.
+* Update rtl language file.
 
 = February-12-2026 :: 0.5.1
 

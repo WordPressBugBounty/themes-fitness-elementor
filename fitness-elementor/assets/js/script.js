@@ -54,6 +54,11 @@ jQuery('.nav-menu li a:first').on('keydown', function (event) {
   }
 });
 
+jQuery(document).ready(function() {
+  window.addEventListener('load', (event) => {
+      jQuery(".loader").delay(2000).fadeOut("slow");
+  });
+})
 /* ===============================================
   Scroll Top //
 ============================================= */

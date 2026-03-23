@@ -572,6 +572,66 @@ if ( class_exists("Kirki")){
 			],
 		],
 	) );
+    
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'toggle',
+		'settings'    => 'fitness_elementor_preloader_hide',
+		'label'       => esc_html__( 'Here you can enable or disable your preloader.', 'fitness-elementor' ),
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => false,
+		'priority'    => 10,
+		'tab'         => 'general',
+	] );
+    
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'         => 'general',
+		'settings'    => 'fitness_elementor_preloader_type_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Select Preloader Type', 'fitness-elementor' ) . '</h3>',
+	] );
+	
+	Kirki::add_field( 'theme_config_id', [
+		'type'     => 'radio',
+		'tab'      => 'general',
+		'settings' => 'fitness_elementor_preloader_type',
+		'section'  => 'fitness_elementor_additional_setting',
+		'default'  => 'diamond',
+		'choices'  => [
+			'diamond' => esc_html__( 'Diamond', 'fitness-elementor' ),
+			'orbit' => esc_html__( 'Orbit Pulse Loader', 'fitness-elementor' ),
+			'liquid' => esc_html__( 'Liquid Glow Loader', 'fitness-elementor' ),
+		],
+    ] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'custom',
+		'tab'         => 'general',
+		'settings'    => 'fitness_elementor_preloader_bg_image_heading',
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => '<h3 style="color: #2271b1; padding:10px; background:#fff; margin:0; border-left: solid 5px #2271b1; ">' . __( 'Preloader Background', 'fitness-elementor' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id',
+	[
+		'settings'    => 'fitness_elementor_preloader_bg_image',
+		'tab'         => 'general',
+		'type'        => 'background',
+		'section'     => 'fitness_elementor_additional_setting',
+		'default'     => [
+			'background-color'      => 'rgba(255, 255, 255, 1)',
+			'background-image'      => '',
+			'background-repeat'     => 'no-repeat',
+			'background-position'   => 'center center',
+		],
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => '.preloader-types',
+			],
+		],
+	]);
 
 	Kirki::add_field( 'theme_config_id', [
 		'type'        => 'toggle',
