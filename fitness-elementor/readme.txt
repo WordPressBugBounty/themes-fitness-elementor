@@ -1,7 +1,7 @@
 === Fitness Elementor ===
 Contributors: wpelemento
 Requires at least: 5.0
-Stable tag: 0.5.2
+Stable tag: 0.5.3
 Requires PHP: 5.6
 Tested up to: 6.9
 License: GPLv3.0 or later
@@ -68,6 +68,10 @@ License URI : https://pxhere.com/en/license, CC0
 Source 		: https://pxhere.com/en/photo/1165965
 
 == Changelog ==
+
+= April-1-2026 :: 0.5.3
+
+* Fixed minor error.
 
 = March-12-2026 :: 0.5.2
  
